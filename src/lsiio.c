@@ -30,16 +30,20 @@ const char *type_trigger = "trigger";
 
 static inline int check_prefix(const char *str, const char *prefix)
 {
-    if(str == NULL || prefix == NULL)
+    if(str == NULL || prefix == NULL) {
         return 0;
+	}
+
 	return strlen(str) > strlen(prefix) &&
 	       strncmp(str, prefix, strlen(prefix)) == 0;
 }
 
 static inline int check_postfix(const char *str, const char *postfix)
 {
-    if(str == NULL || postfix == NULL)
+    if(str == NULL || postfix == NULL) {
         return 0;
+	}
+
 	return strlen(str) > strlen(postfix) &&
 	       strcmp(str + strlen(str) - strlen(postfix), postfix) == 0;
 }
